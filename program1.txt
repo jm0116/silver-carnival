@@ -1,0 +1,12 @@
+JMP start
+
+var1: 0xa
+var2: 0xf
+
+start:
+    LDAC var1
+    MVAC
+    LDAC var2
+    SUB
+    OUT
+    HALT

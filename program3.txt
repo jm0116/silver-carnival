@@ -1,0 +1,48 @@
+JMP start
+
+var1: 0
+var2: 0xa
+nextnum: 0
+decrement: 1
+sum: 0
+
+start:
+    LDAC var1
+    MVAC
+    LDAC var2
+    ADD
+    STAC sum
+    
+    LDAC decrement
+    MVAC
+    LDAC var2
+    SUB 
+    STAC nextnum
+
+loop:
+    LDAC nextnum
+    MVAC
+    LDAC sum
+    ADD
+    STAC sum
+
+    LDAC decrement
+    MVAC
+    LDAC nextnum
+    SUB
+    STAC nextnum
+    CLAC
+
+    LDAC nextnum
+    JMPZ end
+    JMP loop
+
+end:
+    CLAC
+    LDAC sum
+    OUT
+    HALT
+
+
+    
+    

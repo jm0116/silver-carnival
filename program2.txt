@@ -1,0 +1,81 @@
+JMP start
+
+var1: A9
+var2: 2B
+var3: AF
+var4: D1
+sum1: 0
+sum2: 0
+sum3: 0
+sub1: 0 
+result1: 0
+result2: 0
+result3: 0
+result4: 0
+
+start:
+    LDAC var2
+    MVAC
+    LDAC var1
+    ADD
+    STAC sum1
+    OUT
+    CLAC
+
+second:   
+    LDAC var2
+    MVAC
+    LDAC var1
+    SUB
+    STAC sub1
+    OUT
+    CLAC
+
+third:   
+    MOVR
+    ADD
+    STAC sum2
+    OUT
+    CLAC
+
+fourth:
+    LDAC var2
+    MVAC
+    LDAC var1
+    AND
+    STAC result1
+    OUT
+    CLAC
+    
+fifth:    
+    LDAC var2
+    MVAC
+    LDAC var1
+    OR
+    STAC result2
+    OUT
+    CLAC 
+
+sixth:
+    LDAC var1
+    ASHR 
+    STAC result3
+    OUT
+    CLAC
+    
+seventh:    
+    LDAC var3
+    INC
+    STAC sum3
+    OUT
+    CLAC
+
+eigth:
+    LDAC var4
+    NOT
+    STAC result4
+    OUT
+    CLAC
+    HALT
+
+    
